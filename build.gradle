@@ -1,0 +1,19 @@
+group 'jp.shohhei1126.sample'
+version '0.1'
+
+apply plugin: 'java'
+
+processResources.destinationDir = compileJava.destinationDir
+compileJava.dependsOn processResources
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtime "mysql:mysql-connector-java:+"
+    compile "org.seasar.doma:doma:2.5.0"
+    testCompile 'junit:junit:4.11'
+}
